@@ -1,6 +1,6 @@
 import 'dotenv/config'
-import connectDB from './db/index.js'
-import { app } from './app.js'
+import connectDB from './src/config/database.js'
+import { app } from './src/app.js'
 
 const port = 3000||process.env.PORT
 
@@ -10,8 +10,6 @@ connectDB()
     app.listen(port, () => {
     console.log(`App listening on port ${port}`)})
 })
-
 .catch((error) => {
     console.error("Error connecting to MongoDB:", error);
 })
-
