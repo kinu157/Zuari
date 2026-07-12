@@ -2,9 +2,32 @@ import React from 'react'
 import { useState } from "react";
 import { Navbar } from '../components/Navbar';
 import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
+import { useContact } from '../hooks/useContact';
 
 const Contactpage = () => {
   const [sent, setSent] = useState(false);
+  const {loading, setLoading, handleContactSave} = useContact();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phoneNo: "",
+    company: "",
+    teamSize: "",
+    interestedIn: "",
+  })
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await handleContactSave( formData );
+    if (response.success) {
+      console.log("Contact saved successfully:", response.data);
+      setSent(true);
+    } else {
+      console.error("Error saving contact:", response.error);
+      throw new Error("Failed to save contact");
+    }
+  }
+
   return (
     <main>
       <div>
@@ -62,10 +85,7 @@ const Contactpage = () => {
             <div className="absolute -inset-4 -z-10 rounded-[2.5rem] bg-grad-cool opacity-25 blur-2xl animate-blob" />
 
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
+              onSubmit={handleSubmit}
               className="rounded-4xl border border-(--border)/60 bg-(--card) p-8 shadow-soft md:p-10"
             >
               {sent ? (
@@ -96,6 +116,7 @@ const Contactpage = () => {
                       label="Full name"
                       name="name"
                       placeholder="Ada Lovelace"
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
                     />
 
                     <Field
@@ -103,26 +124,31 @@ const Contactpage = () => {
                       name="email"
                       type="email"
                       placeholder="ada@company.com"
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
                     />
 
                     <Field
                       label="Phone Number"
-                      name="phone"
-                      type="tel"
+                      name="phoneNo"
+                      type="number"
                       placeholder="+91 98765 43210"
+                      onChange={(e) => setFormData({...formData, phoneNo: e.target.value})}
                     />
 
                     <Field
                       label="Company"
                       name="company"
                       placeholder="Difference Engines Pvt Ltd"
+                      onChange={(e) => setFormData({...formData, company: e.target.value})}
                     />
 
                     <div className="grid gap-4 sm:grid-cols-2">
                       <Field
+                        type="number"
                         label="Team size"
-                        name="team"
+                        name="teamSize"
                         placeholder="e.g. 120"
+                        onChange={(e) => setFormData({...formData, teamSize: e.target.value})}
                       />
 
                       <div>
@@ -130,7 +156,7 @@ const Contactpage = () => {
                           Interested in
                         </label>
 
-                        <select className="w-full rounded-xl border border-(--border) bg-(--background) px-4 py-3 text-sm outline-none transition focus:border-(--coral) focus:ring-2 focus:ring-(--coral)/30">
+                        <select className="w-full rounded-xl border border-(--border) bg-(--background) px-4 py-3 text-sm outline-none transition focus:border-(--coral) focus:ring-2 focus:ring-(--coral)/30" onChange={(e) => setFormData({...formData, interestedIn: e.target.value})}>
                           <option>Group Health</option>
                           <option>Group Term Life</option>
                           <option>Business Insurance</option>
@@ -153,7 +179,7 @@ const Contactpage = () => {
     </main>
   )
 }
-function Field({ label, name, type = "text", placeholder }) {
+function Field({ label, name, type = "text", placeholder, onChange }) {
   return (
     <div>
       <label htmlFor={name} className="mb-1.5 block text-xs font-medium text-foreground/70">{label}</label>
@@ -163,6 +189,7 @@ function Field({ label, name, type = "text", placeholder }) {
         type={type}
         required
         placeholder={placeholder}
+        onChange={onChange}
         className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition focus:border-coral focus:ring-2 focus:ring-coral/30"
       />
     </div>

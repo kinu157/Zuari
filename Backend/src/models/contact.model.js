@@ -10,7 +10,7 @@ const contactSchema = new mongoose.Schema({
         required: true
     },
     phoneNo: {
-        type: String,
+        type: Number,
         required: true
     },
     company: {
@@ -18,7 +18,7 @@ const contactSchema = new mongoose.Schema({
         required: true
     },
     teamSize: {
-        type: String,
+        type: Number,
         required: true
     },
     interestedIn: {

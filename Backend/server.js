@@ -2,8 +2,7 @@ import 'dotenv/config'
 import connectDB from './src/config/database.js'
 import { app } from './src/app.js'
 
-const port = 3000||process.env.PORT
-
+const port = process.env.PORT
 
 connectDB()
 .then(() => {
