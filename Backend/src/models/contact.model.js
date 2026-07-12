@@ -9,14 +9,24 @@ const contactSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    title: {
+    phoneNo: {
         type: String,
         required: true
     },
-    message: {
+    company: {
+        type: String,
+        required: true
+    },
+    teamSize: {
+        type: String,
+        required: true
+    },
+    interestedIn: {
         type: String,
         required: true
     }
+}, {
+    timestamps: true
 })
 
-export const Contact = mongoose.model('Contact', contactSchema)
+export const contactModel = mongoose.model('Contact', contactSchema)
