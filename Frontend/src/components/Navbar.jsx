@@ -23,11 +23,10 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`sticky top-0 z-50 transition-all duration-300 ${scrolled
           ? "backdrop-blur-lg bg-background/75 border-b border-border/60"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center">
@@ -43,8 +42,8 @@ export function Navbar() {
             <Link
               key={n.to}
               to={n.to}
-              className="rounded-full px-4 py-2 text-sm font-medium text-foreground/80 transition hover:bg-secondary hover:text-foreground"
-              // activeProps={{ className: "bg-secondary text-foreground" }}
+              className="rounded-full px-4 py-2 text-sm font-medium text-(--foreground)/80 transition hover:bg-(--secondary) hover:text-(--foreground)"
+            // activeProps={{ className: "bg-secondary text-foreground" }}
             >
               {n.label}
             </Link>
@@ -54,24 +53,20 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-2">
           <Link
             to="/contact"
-            className="rounded-full px-4 py-2 text-sm font-medium hover:bg-secondary"
+            className="rounded-full px-4 py-2 text-sm font-medium hover:bg-(--secondary)"
           >
             Log in
           </Link>
           <Link
             to="/contact"
-            className="group relative overflow-hidden rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition hover:-translate-y-0.5"
+            className="inline-flex items-center justify-center rounded-full bg-(--primary) px-5 py-2.5 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5 hover:bg-(--foreground)"
           >
-            <span className="relative z-10">Get a quote</span>
-            <span className="absolute inset-0 -translate-x-full bg-grad-warm transition-transform duration-500 group-hover:translate-x-0" />
-            <span className="absolute inset-0 flex items-center justify-center text-primary-foreground opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-              Get a quote →
-            </span>
+            Get a quote
           </Link>
         </div>
 
         <button
-          className="md:hidden rounded-full p-2 hover:bg-secondary"
+          className="md:hidden rounded-full p-2 hover:bg-(--secondary)"
           onClick={() => setOpen(!open)}
           aria-label="Menu"
         >
@@ -80,14 +75,14 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur px-6 py-4 animate-reveal">
+        <div className="md:hidden border-t border-(--border)/60 bg-(--background)/95 backdrop-blur px-6 py-4 animate-reveal">
           <nav className="flex flex-col gap-1">
             {nav.map((n) => (
               <Link
                 key={n.to}
                 to={n.to}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-secondary"
+                className="rounded-lg px-3 py-2 text-sm font-medium hover:bg-(--secondary)"
               >
                 {n.label}
               </Link>
@@ -95,7 +90,7 @@ export function Navbar() {
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-(--primary) px-4 py-2.5 text-center text-sm font-semibold text-(--primary-foreground) transition hover:bg-(--foreground)"
             >
               Get a quote
             </Link>

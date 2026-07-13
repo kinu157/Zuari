@@ -6,10 +6,10 @@ export const useContact = () => {
     const context = useContext(ContactContext)
     const { loading, setLoading } = context;
 
-    const handleContactSave = async ({ name, email, phoneNo, company, teamSize, interestedIn }) => {
+    const handleContactSave = async ({ name, email, phoneNo, message }) => {
         setLoading(true);
         try {
-            const response = await createContact({ name, email, phoneNo, company, teamSize, interestedIn });
+            const response = await createContact({ name, email, phoneNo, message });
             return { success: true, data: response.data };
         } catch (error) {
             console.error("Error saving contact:", error);

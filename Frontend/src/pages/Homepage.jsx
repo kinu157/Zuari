@@ -7,6 +7,7 @@ import businessImg from "../assets/businessImg.jpg";
 import { Rotator, Counter } from '../components/dynamic-bits';
 import { Navbar } from '../components/Navbar';
 import { useReveal } from '../hooks/useReveal';
+import Footer from '../components/Footer';
 
 function RevealItem({ children, className = '', delay = 0, offset = 40 }) {
   const { ref, visible } = useReveal();
@@ -370,6 +371,7 @@ const Homepage = () => {
         </div>
       </section>
 
+      <Footer />
     </div>
   )
 }

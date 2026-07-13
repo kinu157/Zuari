@@ -3,22 +3,21 @@ import { useState } from "react";
 import { Navbar } from '../components/Navbar';
 import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
 import { useContact } from '../hooks/useContact';
+import Footer from '../components/Footer';
 
 const Contactpage = () => {
   const [sent, setSent] = useState(false);
-  const {loading, setLoading, handleContactSave} = useContact();
+  const { loading, setLoading, handleContactSave } = useContact();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phoneNo: "",
-    company: "",
-    teamSize: "",
-    interestedIn: "",
+    message: "",
   })
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await handleContactSave( formData );
+    const response = await handleContactSave(formData);
     if (response.success) {
       console.log("Contact saved successfully:", response.data);
       setSent(true);
@@ -30,9 +29,7 @@ const Contactpage = () => {
 
   return (
     <main>
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-24">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="animate-reveal">
@@ -116,15 +113,15 @@ const Contactpage = () => {
                       label="Full name"
                       name="name"
                       placeholder="Ada Lovelace"
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
 
                     <Field
-                      label="Work email"
+                      label="Email"
                       name="email"
                       type="email"
                       placeholder="ada@company.com"
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />
 
                     <Field
@@ -132,37 +129,18 @@ const Contactpage = () => {
                       name="phoneNo"
                       type="number"
                       placeholder="+91 98765 43210"
-                      onChange={(e) => setFormData({...formData, phoneNo: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, phoneNo: e.target.value })}
                     />
 
-                    <Field
-                      label="Company"
-                      name="company"
-                      placeholder="Difference Engines Pvt Ltd"
-                      onChange={(e) => setFormData({...formData, company: e.target.value})}
-                    />
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <Field
-                        type="number"
-                        label="Team size"
-                        name="teamSize"
-                        placeholder="e.g. 120"
-                        onChange={(e) => setFormData({...formData, teamSize: e.target.value})}
+                    <div>
+                      <label className="mb-1.5 block text-xs font-medium text-(--foreground)/70">Message (optional)</label>
+                      <textarea 
+                        rows={3} 
+                        required
+                        placeholder="Tell us what you're looking for…" 
+                        className="w-full resize-none rounded-xl border border-(--border) bg-(--background) px-4 py-3 text-sm outline-none transition focus:border-(--coral) focus:ring-2 focus:ring-(--coral)/30" 
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       />
-
-                      <div>
-                        <label className="mb-1.5 block text-xs font-medium text-(--foreground)/70">
-                          Interested in
-                        </label>
-
-                        <select className="w-full rounded-xl border border-(--border) bg-(--background) px-4 py-3 text-sm outline-none transition focus:border-(--coral) focus:ring-2 focus:ring-(--coral)/30" onChange={(e) => setFormData({...formData, interestedIn: e.target.value})}>
-                          <option>Group Health</option>
-                          <option>Group Term Life</option>
-                          <option>Business Insurance</option>
-                          <option>Full program design</option>
-                        </select>
-                      </div>
                     </div>
 
                     <button className="group mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-(--primary) px-6 py-3.5 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5">
@@ -176,6 +154,8 @@ const Contactpage = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </main>
   )
 }

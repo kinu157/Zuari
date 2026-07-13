@@ -5,9 +5,9 @@ const api = axios.create({
     withCredentials: true,
 });
 
-export const createContact = async ({ name, email, phoneNo, company, teamSize, interestedIn }) => {
+export const createContact = async ({ name, email, phoneNo, message }) => {
     try {
-        const response = await api.post("/api/contact", { name, email, phoneNo, company, teamSize, interestedIn });
+        const response = await api.post("/api/contact", { name, email, phoneNo, message });
         return response.data;
     } catch (error) {
         console.error("Error creating contact:", error);
