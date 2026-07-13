@@ -5,11 +5,12 @@ import { Mail, Phone, MapPin, Send, Check } from "lucide-react";
 import { useContact } from '../hooks/useContact';
 import Footer from '../components/Footer';
 import { toast, Toaster } from 'react-hot-toast';
+import Loading from '../components/Loading';
 
 export const Contactpage = () => {
   const [searchParams] = useSearchParams();
   const [sent, setSent] = useState(false);
-  const { loading, setLoading, handleContactSave } = useContact();
+  const { loading, handleContactSave } = useContact();
   const [formData, setFormData] = useState({
     name: "",
     email: searchParams.get("email") || "",
@@ -25,6 +26,7 @@ export const Contactpage = () => {
     }
   }, [searchParams]);
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await handleContactSave(formData);
@@ -41,19 +43,19 @@ export const Contactpage = () => {
       toast.error("Error saving contact:");
     }
   }
-
-  if (loading) {
-    return (
-      <Loading />
-    )
-  }
-
+  
   return (
-    <main>
+    <main className="relative">
       <Toaster
         position="bottom-right"
         reverseOrder={false}
+        containerStyle={{ zIndex: 1000 }}
       />
+      {loading ? (
+        <div className="fixed inset-0 z-40 bg-(--background)/80 backdrop-blur-sm">
+          <Loading />
+        </div>
+      ) : null}
       <Navbar />
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-24">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
@@ -108,7 +110,7 @@ export const Contactpage = () => {
 
             <form
               onSubmit={handleSubmit}
-              className="rounded-4xl border border-(--border)/60 bg-(--card) p-8 shadow-soft md:p-10"
+              className={`rounded-4xl border border-(--border)/60 bg-(--card) p-8 shadow-soft md:p-10 ${loading ? "pointer-events-none opacity-60" : ""}`}
             >
               {sent ? (
                 <div className="flex flex-col items-center justify-center py-16 text-center">
@@ -169,7 +171,7 @@ export const Contactpage = () => {
                       />
                     </div>
 
-                    <button className="group mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-(--primary) px-6 py-3.5 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5">
+                    <button disabled={loading} className="group mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-(--primary) px-6 py-3.5 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70">
                       Send request
                       <Send className="h-4 w-4 transition group-hover:translate-x-1" />
                     </button>

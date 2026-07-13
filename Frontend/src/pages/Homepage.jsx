@@ -39,7 +39,7 @@ const Homepage = () => {
   ];
 
   const logos = ["ACME", "Northwind", "Vertex", "Lumina", "Kite & Co", "Meridian", "Halcyon", "Tessera"];
-  const doubled = [...logos, ...logos];
+  const marqueeItems = Array(6).fill(logos).flat();
 
   const Solutions = [
     {
@@ -101,8 +101,17 @@ const Homepage = () => {
     { q: "We've had four claims this year. Every single one was closed without me lifting a finger.", n: "Ananya Rao", r: "Founder, Kite & Co" },
   ];
 
-  const handleGetQuote = () => {
-    navigate(`/contact?email=${encodeURIComponent(email)}`);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    navigate(`/contact?email=${encodeURIComponent(email.trim())}`);
   };
 
   return (
@@ -130,19 +139,23 @@ const Homepage = () => {
               Zuari Insurance Brokers Limited designs group health, life and business insurance for growing companies — with human advisors, faster claims, and a delightful dashboard for every employee.
             </p>
 
-            <form className="mt-8 flex max-w-md flex-col gap-2 sm:flex-row" onSubmit={(e) => e.preventDefault()}>
+            <form className="mt-8 flex max-w-md flex-col gap-2 sm:flex-row" onSubmit={handleSubmit}>
               <input
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                type="email"
                 required
                 placeholder="Your work email"
                 className="w-full rounded-full border border-(--border) bg-(--background) px-5 py-3.5 text-sm outline-none transition focus:border-(--coral) focus:ring-2 focus:ring-(--coral)/30"
               />
-              <button type="button" onClick={handleGetQuote} className="group relative overflow-hidden rounded-full bg-(--primary) px-6 py-3.5 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5">
-                <span className="relative z-10 inline-flex items-center gap-1.5">
-                  Get a quote <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                </span>
+              <button
+                type="submit"
+                className="group relative overflow-hidden whitespace-nowrap rounded-full bg-(--primary) px-6 py-3.5 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5"
+              >
+                <div className="flex items-center justify-center gap-1.5 whitespace-nowrap">
+                  <span>Contact Us</span>
+                  <ArrowRight className="h-4 w-4 shrink-0 transition group-hover:translate-x-1" />
+                </div>
               </button>
             </form>
           </div>
@@ -186,14 +199,19 @@ const Homepage = () => {
         <p className="mb-6 text-center text-xs font-medium uppercase tracking-wider text-(--muted-foreground)">
           Trusted by forward-thinking companies
         </p>
+
         <div className="relative overflow-hidden">
-          <div className="flex w-max animate-marquee gap-16 px-6">
-            {doubled.map((l, i) => (
-              <span key={i} className="font-display text-2xl font-semibold text-(--foreground)/40 whitespace-nowrap">
-                {l}
+          <div className="flex w-max animate-marquee">
+            {marqueeItems.map((logo, i) => (
+              <span
+                key={i}
+                className="mx-8 whitespace-nowrap font-display text-2xl font-semibold text-(--foreground)/40"
+              >
+                {logo}
               </span>
             ))}
           </div>
+
           <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-(--background) to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-(--background) to-transparent" />
         </div>
