@@ -52,22 +52,30 @@ const Homepage = () => {
   ];
 
   const logos = [
-    "Zuari Idustries",
-    "Zuari Finserv Limited",
-    "Zuari Management Services",
-    "Zuari Agro Chemical",
-    "Paradeep Phosphates",
-    "Zuari Farmhub",
-    "Zuari Envien Bioenergy",
-    "Zuari Infraworld India",
-    "Zuari Furniture Limited",
-    "Texmaco Infrastructure & Holdings",
-    "Simon India",
-    "Texmaco Rail & Engineering",
-    "Zuari IAV Private Limited",
-    "Zuari International ",
-    "Lionel India",
+    {
+      name: "Zuari Industries",
+      url: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      name: "Zuari Finserv Limited",
+    }
+    // "Zuari Idustries",
+    // "Zuari Finserv Limited",
+    // "Zuari Management Services",
+    // "Zuari Agro Chemical",
+    // "Paradeep Phosphates",
+    // "Zuari Farmhub",
+    // "Zuari Envien Bioenergy",
+    // "Zuari Infraworld India",
+    // "Zuari Furniture Limited",
+    // "Texmaco Infrastructure & Holdings",
+    // "Simon India",
+    // "Texmaco Rail & Engineering",
+    // "Zuari IAV Private Limited",
+    // "Zuari International ",
+    // "Lionel India",
   ];
+
   const marqueeItems = Array(6).fill(logos).flat();
 
   const Solutions = [
@@ -281,7 +289,7 @@ const Homepage = () => {
                 key={i}
                 className="mx-8 whitespace-nowrap font-display text-2xl font-semibold text-(--foreground)/40"
               >
-                {logo}
+                {logo?.url ? <img src={logo.url} alt={logo.name} className="h-[50px] w-full object-contain" /> : logo?.name}
               </span>
             ))}
           </div>
