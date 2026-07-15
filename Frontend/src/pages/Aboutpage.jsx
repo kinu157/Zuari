@@ -115,7 +115,7 @@ const Aboutpage = () => {
       </div>
 
         <div className="mt-20 flex flex-wrap items-center justify-between gap-4 rounded-4xl bg-grad-warm p-10 text-(--cream) md:p-14">
-          <h3 className="max-w-xl font-display text-3xl md:text-4xl">Want to work with us — or for us?</h3>
+          <h3 className="max-w-xl font-display text-3xl md:text-4xl">Want to work with us ?</h3>
           <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-(--cream) px-6 py-3 text-sm font-semibold text-(--foreground) transition hover:-translate-y-0.5">
             Get in touch <ArrowRight className="h-4 w-4" />
           </Link>
