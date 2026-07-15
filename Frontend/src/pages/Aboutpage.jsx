@@ -32,9 +32,6 @@ const Aboutpage = () => {
             <h1 className="mt-3 font-display text-5xl leading-tight md:text-6xl">
               We started Zuari Insurance Brokers Limited because insurance <span className="italic">shouldn't</span> feel like insurance.
             </h1>
-            <p className="mt-6 text-lg text-(--muted-foreground)">
-              After years of watching HR teams drown in PDF policies and employees battle for legitimate claims, we set out to build a brokerage from scratch — one that uses technology to eliminate friction and humans to handle everything that matters.
-            </p>
             <p className="mt-4 text-lg text-(--muted-foreground)">
               Zuari Insurance Brokers Limited is IRDAI-licensed, independent, and answers only to the companies and people it protects.
             </p>

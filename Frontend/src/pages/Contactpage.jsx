@@ -91,7 +91,7 @@ export const Contactpage = () => {
 
             <div className="mt-10 space-y-4">
               {[
-                { i: Mail, l: "Email", v: "hello@zuariinsurance.in" },
+                { i: Mail, l: "Email", v: "wecare@zuariinsurance.in" },
                 { i: Phone, l: "Phone", v: "011-45494500" },
                 {
                   i: MapPin,

@@ -20,6 +20,16 @@ import { Rotator, Counter } from "../components/dynamic-bits";
 import { Navbar } from "../components/Navbar";
 import { useReveal } from "../hooks/useReveal";
 import Footer from "../components/Footer";
+import zuari_logo from "../assets/Company/zuari_logo.png";
+import Zurai_whatsnew from "../assets/Company/Zuari_whatsnew2.jpg";
+import Zurai_Agro from "../assets/Company/Zuari_Agro.png";
+import Pradeep from "../assets/Company/Pradeep.svg";
+import farmhub_logo from "../assets/Company/farmhub-logo.jpg";
+import zuari_adventz_logo from "../assets/Company/zuari-adventz_logo.png";
+import logo from "../assets/Company/logo.png";
+import logo_Lionel_India_Ltd from "../assets/Company/logo_Lionel_India_Ltd.jpg";
+import logo2 from "../assets/Company/logo2.png";
+
 
 
 function RevealItem({ children, className = "", delay = 0, offset = 40 }) {
@@ -54,27 +64,27 @@ const Homepage = () => {
   const logos = [
     {
       name: "Zuari Industries",
-      url: "./src/assets/Company/zuari_logo.png",
+      url: zuari_logo,
     },
     {
       name: "Zuari Finserv Limited",
-      url:"./src/assets/Company/Zuari_whatsnew2.jpg"
+      url: Zurai_whatsnew,
     },
     {
       name: "Zuari Management Services",
-      url:""
+      url: ""
     },
     {
       name: "Zuari Agro Chemical",
-      url:"./src/assets/Company/Zuari_Agro.png"
+      url: Zurai_Agro
     },
     {
       name: "Paradeep Phosphates",
-      url:"./src/assets/Company/Pradeep.svg"
+      url: Pradeep
     },
     {
       name: "Zuari Farmhub",
-      url:"./src/assets/Company/farmhub-logo.jpg"
+      url: farmhub_logo
     },
     {
       name: "Zuari Envien Bioenergy",
@@ -82,7 +92,7 @@ const Homepage = () => {
     },
     {
       name: "Zuari Infraworld India",
-      url:"./src/assets/Company/zuari-adventz_logo.png"
+      url: zuari_adventz_logo
     },
     {
       name: "Zuari Furniture Limited",
@@ -98,7 +108,7 @@ const Homepage = () => {
     },
     {
       name: "Texmaco Rail & Engineering",
-      url:"./src/assets/Company/logo.png"
+      url: logo
     },
     {
       name: "Zuari IAV Private Limited",
@@ -110,27 +120,12 @@ const Homepage = () => {
     },
     {
       name: "Lionel India",
-      url:"./src/assets/Company/logo_Lionel_India_Ltd.jpg"
+      url: logo_Lionel_India_Ltd
     },
     {
       name:"Adventz Group",
-      url:"./src/assets/Company/logo2.png"
+      url: logo2
     }
-    // "Zuari Idustries",
-    // "Zuari Finserv Limited",
-    // "Zuari Management Services",
-    // "Zuari Agro Chemical",
-    // "Paradeep Phosphates",
-    // "Zuari Farmhub",
-    // "Zuari Envien Bioenergy",
-    // "Zuari Infraworld India",
-    // "Zuari Furniture Limited",
-    // "Texmaco Infrastructure & Holdings",
-    // "Simon India",
-    // "Texmaco Rail & Engineering",
-    // "Zuari IAV Private Limited",
-    // "Zuari International ",
-    // "Lionel India",
   ];
 
   const marqueeItems = Array(6).fill(logos).flat();
@@ -288,7 +283,7 @@ const Homepage = () => {
           </div>
 
           <div className="relative">
-            <div className="relative aspect-4/5 w-full overflow-hidden rounded-[2.5rem] shadow-soft">
+            <div className="relative aspect-6/5 w-full overflow-hidden rounded-[2.5rem] shadow-soft">
               <img
                 src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Zuari Insurance Brokers Limited team advising a client"
@@ -341,7 +336,7 @@ const Homepage = () => {
         </p>
 
         <div className="relative overflow-hidden">
-          <div className="flex w-max animate-marquee">
+          <div className="flex items-center w-max animate-marquee">
             {marqueeItems.map((logo, i) => (
               <span
                 key={i}
@@ -445,7 +440,7 @@ const Homepage = () => {
                   loading="lazy"
                   width={1000}
                   height={1200}
-                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="h-[80vh] w-full object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </div>

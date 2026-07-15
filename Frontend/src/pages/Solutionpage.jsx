@@ -134,9 +134,47 @@ const Solutionpage = () => {
             );
           })}
         </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 pt-16 pb-24">
+        <div className="relative overflow-hidden rounded-4xl bg-grad-cool p-12 md:p-20 )">
+          <div className="pointer-events-none absolute -top-24 right-10 h-72 w-72 rounded-full bg-coral opacity-30 blur-3xl animate-blob" />
+          <div className="relative max-w-2xl text-(--cream)">
+            <h1 className="mt-4 font-display text-5xl md:text-6xl">Your Business Our Commitment.</h1>
+            <p className="mt-4 text-(--white)/90">Pick a starting point below, or let us design an integrated program that covers all of it under one roof.</p>
+          </div>
+        </div>
+
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {solutions.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <div
+                key={s.title}
+                className="group relative overflow-hidden rounded-3xl border border-(--border)/60 bg-(--card) p-6 transition hover:-translate-y-1 hover:shadow-soft"
+                style={{ animation: `reveal-up 0.6s ${i * 80}ms both` }}
+              >
+                <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-grad-warm opacity-0 blur-2xl transition-opacity group-hover:opacity-30" />
+                <span className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${s.color}`}>
+                  <Icon className="h-6 w-6" />
+                </span>
+                <h3 className="mt-5 font-display text-xl font-semibold">{s.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                <ul className="mt-4 space-y-2">
+                  {s.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-(--coral)" strokeWidth={3} />
+                      <span className="text-(--foreground)/80">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
+        </div>
 
         <div className="mt-10  text-center  ">
-          
+
           <Link to="/contact" className="mt-6 inline-flex items-center gap-2 rounded-full bg-(--foreground) px-6 py-3 text-sm font-semibold text-(--cream) transition hover:-translate-y-0.5">
             Book a call <ArrowRight className="h-4 w-4" />
           </Link>

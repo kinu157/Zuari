@@ -142,7 +142,7 @@
   }
 
   to {
-    transform: translateX(-10%);
+    transform: translateX(-50%);
   }
 }
 
@@ -222,7 +222,7 @@
   }
 
   .animate-marquee {
-    animation: marquee 20s linear infinite;
+    animation: marquee 60s linear infinite;
   }
 
   .animate-reveal {

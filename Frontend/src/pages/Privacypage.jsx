@@ -12,7 +12,7 @@ const Privacypage = () => {
             <section className="mx-auto max-w-7xl px-6 pt-16 pb-24">
 
                 {/* Hero */}
-                <section className="relative mx-auto mt-10 max-w-7xl overflow-hidden rounded-[2rem] bg-grad-warm py-14 shadow-soft">
+                <section className="relative mx-auto mt-10 max-w-7xl overflow-hidden rounded-4xl bg-grad-warm py-14 shadow-soft">
                     <div className="pointer-events-none absolute inset-0">
                         <div className="absolute -top-20 -left-16 h-52 w-52 rounded-full bg-white/30 blur-3xl" />
                         <div className="absolute -bottom-20 -right-16 h-60 w-60 rounded-full bg-(--coral)/20 blur-3xl" />
