@@ -347,7 +347,7 @@ const Homepage = () => {
                 key={i}
                 className="mx-8 whitespace-nowrap font-display text-2xl font-semibold text-(--foreground)/40"
               >
-                {logo?.url ? <img src={logo.url} alt={logo.name} className="h-[50px] w-full object-contain" /> : logo?.name}
+                {logo?.url ? <img src={logo.url} alt={logo.name} className="h-12.5 w-full object-contain" /> : logo?.name}
               </span>
             ))}
           </div>
