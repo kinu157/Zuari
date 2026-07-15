@@ -334,7 +334,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section className="border-y border-(--border)/60 bg-(--background)/60 py-8">
+      <section className="border-y border-(--border)/60 bg-(--background)/60 py-8 flex flex-col items-center justify-center gap-4 text-center">
         <p className="mb-6 text-center text-xs font-medium uppercase tracking-wider text-(--muted-foreground)">
           Trusted by forward-thinking companies
         </p>

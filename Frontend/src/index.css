@@ -222,7 +222,7 @@
   }
 
   .animate-marquee {
-    animation: marquee 60s linear infinite;
+    animation: marquee 110s linear infinite;
   }
 
   .animate-reveal {
