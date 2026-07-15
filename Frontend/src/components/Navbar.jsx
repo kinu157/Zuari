@@ -7,7 +7,6 @@ import logo from "../assets/ZuariLogo.png";
 const nav = [
   { to: "/about",     label: "About Us" },
   { to: "/solutions", label: "Solutions" },
-  { to:"",            label:"Services"},
   { to: "/contact",   label: "Contact Us" },
   { to: "",           label:"Careers"},
   
