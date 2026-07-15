@@ -54,10 +54,67 @@ const Homepage = () => {
   const logos = [
     {
       name: "Zuari Industries",
-      url: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?q=80&w=1527&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      url: "./src/assets/Company/zuari_logo.png",
     },
     {
       name: "Zuari Finserv Limited",
+      url:"./src/assets/Company/Zuari_whatsnew2.jpg"
+    },
+    {
+      name: "Zuari Management Services",
+      url:""
+    },
+    {
+      name: "Zuari Agro Chemical",
+      url:"./src/assets/Company/Zuari_Agro.png"
+    },
+    {
+      name: "Paradeep Phosphates",
+      url:"./src/assets/Company/Pradeep.svg"
+    },
+    {
+      name: "Zuari Farmhub",
+      url:"./src/assets/Company/farmhub-logo.jpg"
+    },
+    {
+      name: "Zuari Envien Bioenergy",
+      url:""
+    },
+    {
+      name: "Zuari Infraworld India",
+      url:"./src/assets/Company/zuari-adventz_logo.png"
+    },
+    {
+      name: "Zuari Furniture Limited",
+      url:""
+    },
+    {
+      name: "Texmaco Infrastructure & Holdings",
+      url:""
+    },
+    {
+      name: "Simon India",
+      url:""
+    },
+    {
+      name: "Texmaco Rail & Engineering",
+      url:"./src/assets/Company/logo.png"
+    },
+    {
+      name: "Zuari IAV Private Limited",
+      url:""
+    },
+    {
+      name: "Zuari International",
+      url:""
+    },
+    {
+      name: "Lionel India",
+      url:"./src/assets/Company/logo_Lionel_India_Ltd.jpg"
+    },
+    {
+      name:"Adventz Group",
+      url:"./src/assets/Company/logo2.png"
     }
     // "Zuari Idustries",
     // "Zuari Finserv Limited",
@@ -178,6 +235,7 @@ const Homepage = () => {
   return (
     <div>
       <Navbar />
+      
       <section className="relative overflow-hidden">
         {/* Floating blobs */}
         <div className="pointer-events-none absolute -top-32 -left-32 h-96 w-96 bg-grad-warm opacity-30 blur-3xl animate-blob" />

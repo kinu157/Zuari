@@ -175,6 +175,7 @@ export const Contactpage = () => {
                       name="phoneNo"
                       type="number"
                       placeholder="+91 98765 43210"
+                      length={10}
                       onChange={(e) => setFormData({ ...formData, phoneNo: e.target.value })}
                     />
 
@@ -188,6 +189,10 @@ export const Contactpage = () => {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       />
                     </div>
+                    <div className="text-xs text-(--muted-foreground)">
+                      By continuing, you agree to Zuari Insurance Brokers Limited <a href="/" className="underline">Terms of Use</a> and <a href="/privacy" className="underline">Privacy Notice</a>.
+                    </div>
+                  
 
                     <SliderCaptcha
                       onVerify={setCaptchaVerified}
