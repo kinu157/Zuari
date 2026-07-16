@@ -8,8 +8,7 @@ const nav = [
   { to: "/about",     label: "About Us" },
   { to: "/solutions", label: "Solutions" },
   { to: "/contact",   label: "Contact Us" },
-  { to: "",           label:"Careers"},
-  
+  { to: "/career",   label: "Career" },
 ];
 
 export function Navbar() {
