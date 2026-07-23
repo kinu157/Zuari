@@ -15,6 +15,7 @@ const Solutionpage = () => {
     { icon: Stethoscope, title: "Group Health Insurance", desc: "Cashless medical cover for employees and dependents.", features: ["10,000+ hospitals", "Maternity & OPD", "Day-one coverage"], color: "bg-(--teal)/15 text-(--teal)" },
     { icon: Umbrella, title: "Group Term Life Insurance", desc: "Financial protection for every employee's family.", features: ["Up to ₹5 Cr sum", "No medicals", "Instant onboarding"], color: "bg-(--sun)/40 text-(--foreground)" },
     { icon: Users, title: "Group Personal Accident Cover", desc: "Worldwide accident protection with 24/7 support.", features: ["Global coverage", "Disability payouts", "Family benefit"], color: "bg-(--primary)/10 text-(--primary)" },
+    { icon: Check, title: "Claim Assistance", desc: "Seamless claim processing with dedicated support with 24/7 availability.", features: ["Dedicated claim handlers", "24/7 support", "Fast claim settlement"], color: "bg-(--teal)/10 text-(--foreground)" },
   ];
 
   const businessSolutions = [
@@ -43,7 +44,7 @@ const Solutionpage = () => {
           </div>
         </section>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-5">
           {teamSolutions.map((s, i) => {
             const Icon = s.icon;
             return (
