@@ -20,15 +20,26 @@ import { Rotator, Counter } from "../components/dynamic-bits";
 import { Navbar } from "../components/Navbar";
 import { useReveal } from "../hooks/useReveal";
 import Footer from "../components/Footer";
-import zuari_logo from "../assets/Company/zuari_logo.png";
-import Zurai_whatsnew from "../assets/Company/Zuari_whatsnew2.jpg";
-import Zurai_Agro from "../assets/Company/Zuari_Agro.png";
-import Pradeep from "../assets/Company/Pradeep.svg";
-import farmhub_logo from "../assets/Company/farmhub-logo.jpg";
-import zuari_adventz_logo from "../assets/Company/zuari-adventz_logo.png";
-import logo from "../assets/Company/logo.png";
-import logo_Lionel_India_Ltd from "../assets/Company/logo_Lionel_India_Ltd.jpg";
-import logo2 from "../assets/Company/logo2.png";
+import Adventz_logo from "../assets/Comp/Adventz.jpg";
+import Farmhub_logo from "../assets/Comp/Farmhub.jpg";
+import GSMA_logo from "../assets/Comp/GSMA.jpg";
+import JaiKisan_logo from "../assets/Comp/JaiKisaaan.jpg";
+import MCFL_logo from "../assets/Comp/MCFL.jpg";
+import Nymwac_logo from "../assets/Comp/Nymwac.jpg";
+import Simon_logo from "../assets/Comp/Simon_India.jpg";
+import Snackpure from "../assets/Comp/Snackpure.jpg";
+import Stylespa from "../assets/Comp/Stylespa.jpg";
+import Taxmaco_logo from "../assets/Comp/Taxmaco_Rail.jpg";
+import Zuari_Envien from"../assets/Comp/Zuari_Envien.jpg"; 
+import Zuari_Furniture from"../assets/Comp/Zuari_Furniture.jpg"; 
+import Zuari_GardernCity from"../assets/Comp/Zuari_GardenCity.jpg"; 
+import Zuari_Industries from"../assets/Comp/Zuari_Industries.jpg"; 
+import Zuari_Infraworld from"../assets/Comp/Zuari_Infraworld.jpg"; 
+import Zuari_insure from"../assets/Comp/Zuari_insure.jpg"; 
+import Zuari_Money from"../assets/Comp/Zuari_Money.jpg"; 
+import Zuari_Premium from"../assets/Comp/Zuari_Premium.jpg"; 
+import Zuari_RainForest from"../assets/Comp/Zuari_RainForest.jpg"; 
+import Zuari_IAV from"../assets/Comp/Zuari-IAV.jpg";
 
 
 
@@ -54,12 +65,6 @@ const Homepage = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const { ref, visible } = useReveal();
-  const stats = [
-    { n: 3200, s: "+", label: "Companies insured" },
-    { n: 480000, s: "+", label: "Lives covered" },
-    { n: 96, s: "%", label: "Claim settlement" },
-    { n: 24, s: "h", label: "Avg. claim TAT" },
-  ];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -67,68 +72,80 @@ const Homepage = () => {
 
   const logos = [
     {
-      name: "Zuari Industries",
-      url: zuari_logo,
+      name: "Adventz Limited",
+      url: Adventz_logo,
     },
     {
-      name: "Zuari Finserv Limited",
-      url: Zurai_whatsnew,
+      name: "Farmhub",
+      url: Farmhub_logo,
     },
     {
       name: "Zuari Management Services",
-      url: ""
+      url: GSMA_logo
     },
     {
-      name: "Zuari Agro Chemical",
-      url: Zurai_Agro
+      name: "Jai Kisan",
+      url: JaiKisan_logo
     },
     {
-      name: "Paradeep Phosphates",
-      url: Pradeep
-    },
-    {
-      name: "Zuari Farmhub",
-      url: farmhub_logo
-    },
-    {
-      name: "Zuari Envien Bioenergy",
-      url: ""
-    },
-    {
-      name: "Zuari Infraworld India",
-      url: zuari_adventz_logo
-    },
-    {
-      name: "Zuari Furniture Limited",
-      url: ""
-    },
-    {
-      name: "Texmaco Infrastructure & Holdings",
-      url: ""
+      name: "Nymwac",
+      url: Nymwac_logo
     },
     {
       name: "Simon India",
-      url: ""
+      url: Simon_logo
     },
     {
-      name: "Texmaco Rail & Engineering",
-      url: logo
+      name: "Snackpure",
+      url: Snackpure
     },
     {
-      name: "Zuari IAV Private Limited",
-      url: ""
+      name: "Stylespa",
+      url: Stylespa
     },
     {
-      name: "Zuari International",
-      url: ""
+      name: "Taxmaco Rail",
+      url: Taxmaco_logo
     },
     {
-      name: "Lionel India",
-      url: logo_Lionel_India_Ltd
+      name: "Zuari Envien",
+      url: Zuari_Envien
     },
     {
-      name: "Adventz Group",
-      url: logo2
+      name: "Zuari Furniture",
+      url: Zuari_Furniture
+    },
+    {
+      name: "Zuari Garden City",
+      url: Zuari_GardernCity
+    },
+    {
+      name: "Zuari Industries",
+      url: Zuari_Industries
+    },
+    {
+      name: "Zuari Infraworld",
+      url: Zuari_Infraworld
+    },
+    {
+      name: "Zuari Insure",
+      url: Zuari_insure
+    },
+    {
+      name: "Zuari Money",
+      url: Zuari_Money
+    },
+    {
+      name: "Zuari Premium",
+      url: Zuari_Premium
+    },
+    {
+      name: "Zuari Rain Forest",
+      url: Zuari_RainForest
+    },
+    {
+      name: "Zuari IAV",
+      url: Zuari_IAV
     }
   ];
 
@@ -187,7 +204,7 @@ const Homepage = () => {
       align: "right",
     },
     {
-      badge: "For HR & Founders",
+      badge: "For HR & Departments",
       title: "Dashboards, not spreadsheets.",
       body: "See enrollment, claims, and utilization in real-time. Add employees in bulk, download endorsements, and get renewal alerts before they matter.",
       bullets: [
@@ -304,7 +321,7 @@ const Homepage = () => {
 
       <section className="border-y border-(--border)/60 bg-(--background)/60 py-8 flex flex-col items-center justify-center gap-4 text-center">
         <p className="mb-6 text-center text-xs font-medium uppercase tracking-wider text-(--muted-foreground)">
-          Trusted by forward-thinking companies
+          Trusted by companies
         </p>
 
         <div className="relative overflow-hidden">
@@ -324,26 +341,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      <section ref={ref} className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-8 rounded-4xl bg-(--primary) p-10 text-(--primary-foreground) md:grid-cols-4">
-          {stats.map((s, i) => (
-            <div
-              key={s.label}
-              className="text-center"
-              style={{
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(20px)",
-                transition: `all 0.7s ${i * 120}ms`,
-              }}
-            >
-              <p className="font-display text-5xl font-semibold">
-                {visible ? <Counter to={s.n} suffix={s.s} /> : `0${s.s}`}
-              </p>
-              <p className="mt-2 text-sm opacity-70">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+     
 
       <section id="solutions" className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -352,8 +350,7 @@ const Homepage = () => {
               What we do
             </span>
             <h2 className="mt-2 max-w-2xl font-display text-4xl md:text-5xl">
-              Insurance programs, <span className="italic">designed</span> — not
-              just sold.
+              Insurance programs.
             </h2>
           </div>
           <p className="max-w-md text-(--muted-foreground)">
@@ -448,9 +445,7 @@ const Homepage = () => {
           <div className="absolute -bottom-20 right-10 h-72 w-72 rounded-full bg-teal blur-3xl animate-float" />
         </div>
         <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center text-white">
-          <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur">
-            Concierge claims
-          </span>
+         
           <h2 className="max-w-3xl font-display text-4xl md:text-6xl">
             Human Care, <span className="italic">Every Where.</span>
           </h2>

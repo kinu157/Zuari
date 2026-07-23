@@ -105,16 +105,11 @@ const Careerpage = () => {
                     <div className="absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-grad-cool opacity-20 blur-3xl animate-blob" />
                     <div className="relative mx-auto max-w-7xl px-6">
                         <div className="max-w-3xl animate-reveal">
-                            <span className="inline-flex items-center gap-2 rounded-full border border-(--border)/60 bg-(--card) px-3 py-1 text-xs font-medium">
-                                <Sparkles className="h-3.5 w-3.5 text-(--coral)" /> We're hiring across India
-                            </span>
+                            
                             <h1 className="mt-5 font-display text-5xl leading-tight md:text-6xl">
                                 Build the future of <span className="italic">insurance</span> with us.
                             </h1>
-                            <p className="mt-6 max-w-2xl text-lg text-(--muted-foreground)">
-                                At Zuari, we're rewriting how modern teams experience insurance — with better technology,
-                                human advisors and concierge claims support. Come help us.
-                            </p>
+                            
                             <div className="mt-8 flex flex-wrap gap-3">
 
                                 <a
@@ -141,15 +136,11 @@ const Careerpage = () => {
                 <section id="openings" className="mx-auto mt-18 max-w-7xl px-6">
                     <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
                         <div>
-                            <span className="text-sm font-semibold uppercase tracking-wider text-(--coral)">Open roles</span>
+                            <span className="text-sm font-semibold uppercase tracking-wider text-(--coral)">Current Openings</span>
                             <h2 className="mt-2 font-display text-4xl md:text-5xl">Find your seat.</h2>
-                            <p className="mt-6 max-w-2xl text-lg text-(--muted-foreground)">
-                                Current openings
-                            </p>
+                            
                         </div>
-                        {/* <p className="text-sm text-(--muted-foreground)">
-                            {filtered.length} role{filtered.length === 1 ? "" : "s"} matching your filters
-                        </p> */}
+                        
                     </div>
 
                     {/* Filters */}

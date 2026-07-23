@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router';
 import { Link } from 'react-router';
 import { Navbar } from '../components/Navbar';
 import Footer from "../components/Footer";
 
 const Privacypage = () => {
+    const { hash } = useLocation();
+
+    useEffect(() => {
+        if (hash) {
+            const el = document.getElementById(hash.replace("#", ""));
+            if (el) {
+                // slight delay lets the page finish laying out before we scroll
+                setTimeout(() => {
+                    el.scrollIntoView({ behavior: "smooth" });
+                }, 100);
+            }
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }, [hash]);
 
     return (
         <main>
@@ -435,7 +451,7 @@ const Privacypage = () => {
                     </div>
 
                     {/* Grievance Redressal */}
-                    <div className="rounded-4xl border border-(--border)/60 bg-(--card) p-10 shadow-soft">
+                    <div id="grievance-redressal" className="rounded-4xl border border-(--border)/60 bg-(--card) p-10 shadow-soft scroll-mt-24">
                         <h2 className="font-display text-3xl">Grievance Redressal</h2>
                         <p className="mt-6 leading-8 text-(--muted-foreground)">
                             If you have concerns about how your personal data is processed, please

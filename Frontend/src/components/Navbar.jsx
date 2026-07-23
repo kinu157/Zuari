@@ -52,12 +52,27 @@ export function Navbar() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          <Link
-            to="/contact"
-            className="rounded-full px-4 py-2 text-sm font-medium hover:bg-(--secondary)"
-          >
-            Log in
-          </Link>
+          <div className="group relative">
+            <button
+              className="rounded-full px-4 py-2 text-sm font-medium hover:bg-(--secondary)"
+            >
+              Log in
+            </button>
+            <div className="invisible absolute right-0 top-full z-50 w-48 rounded-2xl border border-(--border)/60 bg-(--teal)/20 p-2 opacity-0 shadow-soft transition group-hover:visible group-hover:opacity-100">
+              <Link
+                to=""
+                className="block rounded-xl px-4 py-2.5 text-sm font-medium text-(--foreground)/80 transition hover:bg-(--secondary) hover:text-(--foreground)"
+              >
+                Employee Login
+              </Link>
+              <Link
+                to=""
+                className="block rounded-xl px-4 py-2.5 text-sm font-medium text-(--foreground)/80 transition hover:bg-(--secondary) hover:text-(--foreground)"
+              >
+                Corporate Login
+              </Link>
+            </div>
+          </div>
           <Link
             to="/contact"
             className="inline-flex items-center justify-center rounded-full bg-(--primary) px-5 py-2.5 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5 hover:bg-(--foreground)"

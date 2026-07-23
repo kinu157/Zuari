@@ -85,17 +85,11 @@ export const Contactpage = () => {
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-24">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="animate-reveal">
-            <span className="text-sm font-semibold uppercase tracking-wider text-(--coral)">Contact</span>
+            <span className="text-sm font-semibold uppercase tracking-wider text-(--coral)">Contact Us</span>
 
-            <h1 className="mt-3 font-display text-5xl leading-tight md:text-6xl">
-              Let's design your program <span className="italic">together</span>.
-            </h1>
+            
 
-            <p className="mt-6 max-w-lg text-lg text-(--muted-foreground)">
-              Fill in a few details and a Zuari Insurance Brokers Limited advisor will
-                reach out.
-            </p>
-
+            
             <div className="mt-10 space-y-4">
               {[
                 { i: Mail, l: "Email", v: "wecare@zuariinsurance.in" },
@@ -153,12 +147,9 @@ export const Contactpage = () => {
                 </div>
               ) : (
                 <>
-                  <h2 className="font-display text-3xl">Get a quote</h2>
+                  <h2 className="font-display text-3xl">Get in Touch</h2>
 
-                  <p className="mt-2 text-sm text-(--muted-foreground)">
-                    We'll tailor it to your team and industry.
-                  </p>
-
+                  
                   <div className="mt-6 grid gap-4">
                     <Field
                       label="Full name"
