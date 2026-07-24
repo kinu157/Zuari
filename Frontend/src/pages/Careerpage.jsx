@@ -105,11 +105,11 @@ const Careerpage = () => {
                     <div className="absolute -bottom-32 -left-24 h-96 w-96 rounded-full bg-grad-cool opacity-20 blur-3xl animate-blob" />
                     <div className="relative mx-auto max-w-7xl px-6">
                         <div className="max-w-3xl animate-reveal">
-                            
+
                             <h1 className="mt-5 font-display text-5xl leading-tight md:text-6xl">
                                 Build the future of <span className="italic">insurance</span> with us.
                             </h1>
-                            
+
                             <div className="mt-8 flex flex-wrap gap-3">
 
                                 <a
@@ -128,7 +128,7 @@ const Careerpage = () => {
                             </div>
                         </div>
 
-                        
+
                     </div>
                 </section>
 
@@ -138,9 +138,9 @@ const Careerpage = () => {
                         <div>
                             <span className="text-sm font-semibold uppercase tracking-wider text-(--coral)">Current Openings</span>
                             <h2 className="mt-2 font-display text-4xl md:text-5xl">Find your seat.</h2>
-                            
+
                         </div>
-                        
+
                     </div>
 
                     {/* Filters */}
@@ -263,6 +263,7 @@ function Select({ value, onChange, options, label }) {
 }
 
 function ApplyModal({ job, onClose }) {
+    const [agreedToTerms, setAgreedToTerms] = useState(false);
     const [file, setFile] = useState(null);
     const [dragging, setDragging] = useState(false);
     const [sent, setSent] = useState(false);
@@ -309,6 +310,7 @@ function ApplyModal({ job, onClose }) {
                     <form
                         onSubmit={(e) => {
                             e.preventDefault();
+                            if (!agreedToTerms) return;
                             setSent(true);
                         }}
                         className="p-8"
@@ -324,9 +326,9 @@ function ApplyModal({ job, onClose }) {
                         )}
 
                         <div className="mt-6 grid gap-4">
-                            <ModalField label="Full name" name="name" placeholder="Ada Lovelace" />
-                            <ModalField label="Email" name="email" type="email" placeholder="ada@company.com" />
-                            <ModalField label="Phone" name="phone" placeholder="+91 90000 00000" />
+                            <ModalField label="Full name" name="name" placeholder="Enter Your Full Name" />
+                            <ModalField label="Email" name="email" type="email" placeholder="Enter your Email" />
+                            <ModalField label="Phone" name="phone" placeholder="Enter Your Phone Number" />
                             {isGeneral && (
                                 <ModalField
                                     label="Which team interests you?"
@@ -349,8 +351,8 @@ function ApplyModal({ job, onClose }) {
                                     onDrop={onDrop}
                                     onClick={() => inputRef.current?.click()}
                                     className={`flex cursor-pointer flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed p-6 text-center transition ${dragging
-                                            ? "border-(--coral) bg-(--coral)/5"
-                                            : "border-(--border)  bg-(--background) hover:border-(--coral)/60"
+                                        ? "border-(--coral) bg-(--coral)/5"
+                                        : "border-(--border)  bg-(--background) hover:border-(--coral)/60"
                                         }`}
                                 >
                                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-(--coral)/15 text-(--coral)">
@@ -380,13 +382,22 @@ function ApplyModal({ job, onClose }) {
                                 </div>
                             </div>
 
-                            <div className="text-xs text-(--muted-foreground)">
-                                By continuing, you agree to Zuari Insurance Brokers Limited <a href="/" className="underline">Terms of Use</a> and <a href="/privacy" className="underline">Privacy Notice</a>.
-                            </div>
+                            <label className="flex items-start gap-2.5 text-xs text-(--muted-foreground)">
+                                <input
+                                    type="checkbox"
+                                    checked={agreedToTerms}
+                                    onChange={(e) => setAgreedToTerms(e.target.checked)}
+                                    className="mt-0.5 h-4 w-4 shrink-0 rounded border-(--border) accent-(--coral)"
+                                />
+                                <span>
+                                    By continuing, you agree to Zuari Insurance Brokers Limited <a href="/" className="underline">Terms of Use</a> and <a href="/privacy" className="underline">Privacy Notice</a>.
+                                </span>
+                            </label>
 
                             <button
                                 type="submit"
-                                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-(--primary) px-6 py-3 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5"
+                                disabled={!agreedToTerms}
+                                className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-(--primary) px-6 py-3 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
                             >
                                 Submit application
                                 <ArrowRight className="h-4 w-4" />

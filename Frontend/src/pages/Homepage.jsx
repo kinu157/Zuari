@@ -12,6 +12,9 @@ import {
   Check,
   Star,
   Zap,
+  Flame,
+  Ship,
+  Motorbike
 } from "lucide-react";
 import careImg from "../assets/careImg.jpg";
 import familyImg from "../assets/familyImg.jpg";
@@ -30,16 +33,15 @@ import Simon_logo from "../assets/Comp/Simon_India.jpg";
 import Snackpure from "../assets/Comp/Snackpure.jpg";
 import Stylespa from "../assets/Comp/Stylespa.jpg";
 import Taxmaco_logo from "../assets/Comp/Taxmaco_Rail.jpg";
-import Zuari_Envien from"../assets/Comp/Zuari_Envien.jpg"; 
-import Zuari_Furniture from"../assets/Comp/Zuari_Furniture.jpg"; 
-import Zuari_GardernCity from"../assets/Comp/Zuari_GardenCity.jpg"; 
-import Zuari_Industries from"../assets/Comp/Zuari_Industries.jpg"; 
-import Zuari_Infraworld from"../assets/Comp/Zuari_Infraworld.jpg"; 
-import Zuari_insure from"../assets/Comp/Zuari_insure.jpg"; 
-import Zuari_Money from"../assets/Comp/Zuari_Money.jpg"; 
-import Zuari_Premium from"../assets/Comp/Zuari_Premium.jpg"; 
-import Zuari_RainForest from"../assets/Comp/Zuari_RainForest.jpg"; 
-import Zuari_IAV from"../assets/Comp/Zuari-IAV.jpg";
+import Zuari_Envien from "../assets/Comp/Zuari_Envien.jpg";
+import Zuari_Furniture from "../assets/Comp/Zuari_Furniture.jpg";
+import Zuari_GardernCity from "../assets/Comp/Zuari_GardenCity.jpg";
+import Zuari_Industries from "../assets/Comp/Zuari_Industries.jpg";
+import Zuari_Infraworld from "../assets/Comp/Zuari_Infraworld.jpg";
+import Zuari_Money from "../assets/Comp/Zuari_Money.jpg";
+import Zuari_Premium from "../assets/Comp/Zuari_Premium.jpg";
+import Zuari_RainForest from "../assets/Comp/Zuari_RainForest.jpg";
+import Zuari_IAV from "../assets/Comp/Zuari-IAV.jpg";
 
 
 
@@ -128,10 +130,6 @@ const Homepage = () => {
       url: Zuari_Infraworld
     },
     {
-      name: "Zuari Insure",
-      url: Zuari_insure
-    },
-    {
       name: "Zuari Money",
       url: Zuari_Money
     },
@@ -148,33 +146,86 @@ const Homepage = () => {
       url: Zuari_IAV
     }
   ];
+  const Partners = [
+    {
+      name: "Adventz Limited",
+      url: Adventz_logo,
+    },
+    {
+      name: "Farmhub",
+      url: Farmhub_logo,
+    },
+    {
+      name: "Zuari Management Services",
+      url: GSMA_logo
+    },
+    {
+      name: "Jai Kisan",
+      url: JaiKisan_logo
+    },
+    {
+      name: "Nymwac",
+      url: Nymwac_logo
+    },
+    {
+      name: "Simon India",
+      url: Simon_logo
+    },
 
-  const marqueeItems = Array(6).fill(logos).flat();
+  ];
+
+  const marqueeItems = Array(4).fill(logos).flat();
+  const marqueePartners = Array(4).fill(Partners).flat();
 
   const Solutions = [
     {
       icon: Stethoscope,
-      title: "Group Health",
+      title: "Health",
       desc: "Comprehensive group medical cover with maternity, OPD, and mental wellness built in.",
       color: "bg-(--coral)/15 text-(--coral)",
     },
     {
-      icon: Umbrella,
-      title: "Group Term Life",
-      desc: "Financial safety net for every employee's family — instant onboarding, no medicals.",
-      color: "bg-(--teal)/15 text-(--teal)",
+      icon: Motorbike,
+      title: "Motor",
+      desc: "Comprehensive motor insurance for personal and commercial vehicles.",
+      color: "bg-(--primary)/15 text-(--foreground)",
     },
+
     {
       icon: Users,
-      title: "Accident & Disability",
-      desc: "24/7 personal accident cover with worldwide protection and lump-sum payouts.",
+      title: "Liability",
+      desc: "Third-party liability cover for directors, officers, and businesses.",
       color: "bg-(--sun)/40 text-(--foreground)",
     },
     {
       icon: Building2,
-      title: "Business & Property",
-      desc: "Cover offices, equipment, and liability — from cyber to D&O in a single program.",
-      color: "bg-(--primary)/10 text-(--primary)",
+      title: "Engineering",
+      desc: "Protection for construction projects and engineering assets.",
+      color: "bg-(--teal)/15 text-(--teal)",
+    },
+    {
+      icon: Flame,
+      title: "Fire",
+      desc: "Comprehensive fire insurance for buildings and contents.",
+      color: "bg-(--sun)/40 text-(--coral)",
+    },
+    {
+      icon: Ship,
+      title: "Marine",
+      desc: "Insurance for construction, machinery, and equipment — from fire to marine cargo.",
+      color: "bg-(--teal)/15 text-(--teal)",
+    },
+    {
+      icon: Users,
+      title: "Miscellaneous",
+      desc: "Tailored insurance solutions for unique business needs.",
+      color: "bg-(--primary)/15 text-(--foreground)",
+    },
+    {
+      icon: Heart,
+      title: "Life",
+      desc: "Financial safety net for every employee's family — instant onboarding, no medicals.",
+      color: "bg-(--coral)/15 text-(--coral)",
     },
   ];
 
@@ -274,7 +325,7 @@ const Homepage = () => {
               <span className="italic font-normal">actually</span> deserves.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-(--muted-foreground)">
-              Zuari Insurance Brokers Limited provides health, life and
+              Zuari Insurance Brokers Limited provides motor, health, life and
               business insurance.
             </p>
 
@@ -314,24 +365,32 @@ const Homepage = () => {
               <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent" />
             </div>
 
-            
+
           </div>
         </div>
       </section>
 
-      <section className="border-y border-(--border)/60 bg-(--background)/60 py-8 flex flex-col items-center justify-center gap-4 text-center">
-        <p className="mb-6 text-center text-xs font-medium uppercase tracking-wider text-(--muted-foreground)">
+      <section className="border-y border-(--border)/60 bg-(--background)/60 py-8">
+        <p className="mb-6 text-center text-md font-medium uppercase tracking-wider text-(--muted-foreground)">
           Trusted by companies
         </p>
 
         <div className="relative overflow-hidden">
-          <div className="flex items-center w-max animate-marquee">
+          <div className="flex w-max shrink-0 animate-marquee">
             {marqueeItems.map((logo, i) => (
               <span
                 key={i}
-                className="mx-8 whitespace-nowrap font-display text-2xl font-semibold text-(--foreground)/40"
+                className="mx-8 flex shrink-0 items-center whitespace-nowrap font-display text-2xl font-semibold text-(--foreground)/40"
               >
-                {logo?.url ? <img src={logo.url} alt={logo.name} className="h-12.5 w-full object-contain" /> : logo?.name}
+                {logo?.url ? (
+                  <img
+                    src={logo.url}
+                    alt={logo.name}
+                    className="h-10 w-24 object-contain md:h-12 md:w-28"
+                  />
+                ) : (
+                  logo?.name
+                )}
               </span>
             ))}
           </div>
@@ -341,7 +400,6 @@ const Homepage = () => {
         </div>
       </section>
 
-     
 
       <section id="solutions" className="mx-auto max-w-7xl px-6 py-24">
         <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -353,13 +411,10 @@ const Homepage = () => {
               Insurance programs.
             </h2>
           </div>
-          <p className="max-w-md text-(--muted-foreground)">
-            Whether you're a 15-person startup or a 5,000-person enterprise, we
-            shape a program around your people, industry, and budget.
-          </p>
+
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-4">
           {Solutions.map((it, i) => {
             const Icon = it.icon;
             return (
@@ -368,6 +423,10 @@ const Homepage = () => {
                 className="group relative overflow-hidden rounded-3xl border border-(--border)/60 bg-(--card) p-6 transition-all duration-500 hover:-translate-y-2 hover:shadow-soft"
                 style={{ animation: `reveal-up 0.7s ${i * 100}ms both` }}
               >
+                 <Link
+                  to="/solutions"
+                  // className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-(--foreground)/80 transition group-hover:text-(--coral)"
+                >
                 <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-grad-warm opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-40" />
                 <span
                   className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${it.color}`}
@@ -380,16 +439,46 @@ const Homepage = () => {
                 <p className="mt-2 text-sm text-(--muted-foreground)">
                   {it.desc}
                 </p>
-                <Link
+                </Link>
+                {/* <Link
                   to="/solutions"
                   className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-(--foreground)/80 transition group-hover:text-(--coral)"
                 >
                   Learn more{" "}
                   <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                </Link>
+                </Link> */}
               </div>
             );
           })}
+        </div>
+      </section>
+      <section className="border-y border-(--border)/60 bg-(--background)/60 py-8">
+        <p className="mb-6 text-center text-md font-medium uppercase tracking-wider text-(--muted-foreground)">
+          Partners
+        </p>
+
+        <div className="relative overflow-hidden">
+          <div className="flex w-max shrink-0 animate-marquee">
+            {marqueePartners.map((Partners, i) => (
+              <span
+                key={i}
+                className="mx-8 flex shrink-0 items-center whitespace-nowrap font-display text-2xl font-semibold text-(--foreground)/40"
+              >
+                {Partners?.url ? (
+                  <img
+                    src={Partners.url}
+                    alt={Partners.name}
+                    className="h-10 w-24 object-contain md:h-12 md:w-28"
+                  />
+                ) : (
+                  Partners?.name
+                )}
+              </span>
+            ))}
+          </div>
+
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-linear-to-r from-(--background) to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-linear-to-l from-(--background) to-transparent" />
         </div>
       </section>
 
@@ -445,9 +534,9 @@ const Homepage = () => {
           <div className="absolute -bottom-20 right-10 h-72 w-72 rounded-full bg-teal blur-3xl animate-float" />
         </div>
         <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-6 px-6 text-center text-white">
-         
+
           <h2 className="max-w-3xl font-display text-4xl md:text-6xl">
-            Human Care, <span className="italic">Every Where.</span>
+            We Care, <span className="italic">Every Where.</span>
           </h2>
           <p className="max-w-2xl text-white/90">
             When a claim happens, a dedicated Zuari Insurance Brokers Limited

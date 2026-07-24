@@ -64,7 +64,7 @@ const Aboutpage = () => {
           {[
             { n: 2003, l: "Founded" },
             { n: 100, l: "Companies", s: "+" },
-            { n: 10000, l: "Insurance covered", s: "+" },
+            { n: 10000, l: "Customers served", s: "+" },
             // { n: 2000, l: "Clients", s: "+" },
           ].map((s, i) => (
             <div key={s.l} className="rounded-3xl border border-(--border)/60 bg-(--card) p-8 text-center" style={{ animation: `reveal-up 0.6s ${i * 100}ms both` }}>

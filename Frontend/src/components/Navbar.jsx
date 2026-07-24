@@ -58,16 +58,16 @@ export function Navbar() {
             >
               Log in
             </button>
-            <div className="invisible absolute right-0 top-full z-50 w-48 rounded-2xl border border-(--border)/60 bg-(--teal)/20 p-2 opacity-0 shadow-soft transition group-hover:visible group-hover:opacity-100">
+            <div className="invisible absolute right-0 top-full z-50 w-48 rounded-2xl border border-(--border)/60 bg-(--sun)/20 p-2 opacity-0 shadow-soft transition group-hover:visible group-hover:opacity-100">
               <Link
                 to=""
-                className="block rounded-xl px-4 py-2.5 text-sm font-medium text-(--foreground)/80 transition hover:bg-(--secondary) hover:text-(--foreground)"
+                className="block rounded-xl px-4 py-2.5 text-sm font-medium text-(--foreground)/80 transition hover:bg-(--sun)/30 hover:text-(--foreground)"
               >
                 Employee Login
               </Link>
               <Link
                 to=""
-                className="block rounded-xl px-4 py-2.5 text-sm font-medium text-(--foreground)/80 transition hover:bg-(--secondary) hover:text-(--foreground)"
+                className="block rounded-xl px-4 py-2.5 text-sm font-medium text-(--foreground)/80 transition hover:bg-(--sun)/30 hover:text-(--foreground)"
               >
                 Corporate Login
               </Link>

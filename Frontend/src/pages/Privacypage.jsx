@@ -210,7 +210,7 @@ const Privacypage = () => {
                     <div className="rounded-4xl border border-(--border)/60 bg-(--card) p-10 shadow-soft">
                         <h2 className="font-display text-3xl">Transferring Personal Data</h2>
                         <p className="mt-6 leading-8 text-(--muted-foreground)">
-                            Zuari Insurance Brokerage Limited is headquartered in [City], India, and processes information
+                            Zuari Insurance Brokerage Limited is headquartered in Delhi, India, and processes information
                             within India. Where data processors are engaged, we use data processing
                             agreements and appropriate contractual safeguards, and require compliance
                             with applicable data protection laws.
@@ -335,7 +335,7 @@ const Privacypage = () => {
                     <div className="rounded-4xl border border-(--border)/60 bg-(--card) p-10 shadow-soft">
                         <h2 className="font-display text-3xl">Security of Your Information</h2>
                         <p className="mt-6 leading-8 text-(--muted-foreground)">
-                            At [Company Name], we are committed to ensuring the security and
+                            At  Zuari Insurance Brokers Limited, we are committed to ensuring the security and
                             confidentiality of your personal data. We have implemented a robust
                             Information Security Management System (ISMS) based on the ISO 27001:2022
                             standard, designed to protect your data from unauthorized access and other
@@ -362,7 +362,7 @@ const Privacypage = () => {
 
                         <h3 className="mt-6 font-display text-xl">Certifications</h3>
                         <ul className="mt-3 space-y-3 list-disc pl-6 text-(--muted-foreground)">
-                            <li>[Company Name] is ISO 27001:2022 and SOC 2 Type 2 certified, demonstrating our adherence to the highest standards of information security.</li>
+                            <li> Zuari Insurance Brokers Limited is ISO 27001:2022 and SOC 2 Type 2 certified, demonstrating our adherence to the highest standards of information security.</li>
                         </ul>
                     </div>
 
@@ -370,7 +370,7 @@ const Privacypage = () => {
                     <div className="rounded-4xl border border-(--border)/60 bg-(--card) p-10 shadow-soft">
                         <h2 className="font-display text-3xl">Data Retention Guidelines</h2>
                         <p className="mt-6 leading-8 text-(--muted-foreground)">
-                            At [Company Name], we adhere to strict data retention guidelines to ensure
+                            At  Zuari Insurance Brokers Limited, we adhere to strict data retention guidelines to ensure
                             compliance with regulatory requirements and to protect the privacy and
                             security of personal data. Our retention policies are informed by the
                             Insurance Regulatory and Development Authority of India (IRDAI) guidelines
@@ -501,13 +501,13 @@ const Privacypage = () => {
                         <ul className="mt-6 space-y-2 text-(--muted-foreground)">
                             <li><strong>Name:</strong> [DPO Name]</li>
                             <li><strong>Company:</strong> Zuari Insurance Brokerage Limited</li>
-                            <li><strong>Address:</strong> [Registered Office Address]</li>
+                            <li><strong>Address:</strong> A-32, First Floor, Mohan Cooperative Industrial Estate Mathura Road, Badarpur, New Delhi-110044</li>
                             <li><strong>Email:</strong> [dpo@yourcompany.com]</li>
                         </ul>
                         <p className="mt-6 leading-8 text-(--muted-foreground) text-sm">
-                            Note: Insurance products are offered and serviced by [Broking Entity Name] |
-                            CIN [xxxx] | IRDAI Broking License Registration Code: [xxxx] | License
-                            category: [xxxx] | License validity: [xxxx].
+                            Note: Insurance products are offered and serviced by Zuari Insurance Brokers Limited |
+                            CIN U66010HR2003PLC137044 | IRDAI Broking License Registration Code: 318 | License
+                            category: Direct (Life & General) | License validity: 12-12-2026.
                         </p>
                     </div>
 

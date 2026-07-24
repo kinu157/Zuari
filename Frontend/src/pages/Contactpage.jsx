@@ -82,7 +82,7 @@ export const Contactpage = () => {
         </div>
       ) : null}
       <Navbar />
-      <div className="mx-auto max-w-7xl px-6 pt-16 pb-24">
+      <div className="mx-auto max-w-7xl px-6 pt-22 pb-24">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
           <div className="animate-reveal">
             <span className="text-sm font-semibold uppercase tracking-wider text-(--coral)">Contact Us</span>
@@ -154,7 +154,7 @@ export const Contactpage = () => {
                     <Field
                       label="Full name"
                       name="name"
-                      placeholder="Ada Lovelace"
+                      placeholder="Enter Your Full Name"
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
 
@@ -163,7 +163,7 @@ export const Contactpage = () => {
                       name="email"
                       type="email"
                       value={formData.email}
-                      placeholder="ada@company.com"
+                      placeholder="Enter your Email"
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />
 
@@ -171,7 +171,7 @@ export const Contactpage = () => {
                       label="Phone Number"
                       name="phoneNo"
                       type="number"
-                      placeholder="+91 98765 43210"
+                      placeholder="Enter your Phone Number"
                       length={10}
                       onChange={(e) => setFormData({ ...formData, phoneNo: e.target.value })}
                     />
@@ -211,7 +211,7 @@ export const Contactpage = () => {
                     </div> */}
 
                     <button disabled={loading || !captchaVerified || !agreedToTerms} className="group mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-(--primary) px-6 py-3.5 text-sm font-semibold text-(--primary-foreground) shadow-soft transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70">
-                      Send request
+                      Submit
                       <Send className="h-4 w-4 transition group-hover:translate-x-1" />
                     </button>
                   </div>
